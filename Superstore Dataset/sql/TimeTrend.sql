@@ -1,0 +1,11 @@
+-- Time Trend Analysis --
+-- Calculate monthly sales trends.
+-- Calculate monthly profit trends.
+-- Find the best-selling product within each category.
+-- Rank states by total sales.
+-- Rank products by profit within each category.
+-- Calculate each region's contribution to total company sales.
+-- Identify products whose sales are above the company average.
+-- Compare profit margins across categories.
+-- Find the top-performing category in each region.
+-- Identify customers who generate the highest lifetime sales

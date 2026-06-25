@@ -6,23 +6,6 @@ Each project follows a structured workflow from raw data to actionable business 
 
 ---
 
-## 📁 Repository Structure
-
-Each project in this repository typically follows this structure:
-
-    Project Name/
-│
-├── data/ # Raw and cleaned datasets
-├── notebooks/ # Jupyter notebooks (Python analysis & EDA)
-├── sql/ # SQL queries used for analysis
-├── excel/ # Excel analysis or cleaned datasets (if applicable)
-├── tableau/ # Tableau dashboards or exported files
-├── visuals/ # Charts, plots, and images
-└── README.md # Project-specific documentation
-
-
----
-
 ## 🧰 Tools & Technologies
 
 The following tools are used across projects:

@@ -69,7 +69,3 @@ If you have suggestions or feedback, feel free to connect or open an issue.
 ```
 
 ---
-
-If you want, I can also:
-- make a **fancier GitHub README with badges + charts**
-- or help you write a **separate README just for your Superstore project (more impressive for recruiters)**

@@ -115,7 +115,7 @@ This project answers key business questions such as:
 
 ---
 
-## 📊 Example Insights (to be expanded after analysis)
+## 📊 Insights 
 
 - Certain high-revenue products show low or negative profit due to discounting.
 - The Technology category tends to generate higher profit margins than Furniture.

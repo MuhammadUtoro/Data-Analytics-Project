@@ -117,9 +117,9 @@ This project answers key business questions such as:
 
 ## 📊 Insights 
 
-- Certain high-revenue products show low or negative profit due to discounting.
-- The Technology category tends to generate higher profit margins than Furniture.
-- Some states consistently underperform despite strong sales volume.
-- Corporate customers contribute significantly to overall profitability.
+- The number of items sold, sales, and profit are increasing each year
+- The average profit per order is $57.18
+- Office supplies make 60% of total sales
+- Staple envelope is the most profitable product with a contribution of almost 44% of total profit
 
 ---

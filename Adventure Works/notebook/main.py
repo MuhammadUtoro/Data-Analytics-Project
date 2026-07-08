@@ -1,5 +1,5 @@
 from extract import load_csv
-from transform import table_profile, clean_table
+from transform import table_profile, clean_table, combine_sales
 
 # Iterate through the files and rename the file for sql tables
 FILE_PREFIX = 'AdventureWorks_'
@@ -34,4 +34,6 @@ for filename, table_name in tables.items():
 
     dataframes[table_name] = df
 
-print(dataframes['customers'].head(5))
+# Combine sales_2015, sales_2016, sales_2017 into one table sales
+sales = combine_sales(dataframes)
+dataframes['sales'] =  sales

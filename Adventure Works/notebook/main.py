@@ -1,5 +1,6 @@
 from extract import load_csv
-from transform import table_profile, clean_data
+from transform import table_profile, clean_table
+
 # Iterate through the files and rename the file for sql tables
 FILE_PREFIX = 'AdventureWorks_'
 EXTENSION = '.csv'
@@ -23,8 +24,14 @@ tables = {
     for table in table_names
 }
 
+dataframes = {} 
+
 # Observe the data
 for filename, table_name in tables.items():
     df = load_csv(FILE_PATH, filename)
+    df = clean_table(df, table_name)
     table_profile (df, table_name)
-    df = clean_data(df, table_name)
+
+    dataframes[table_name] = df
+
+print(dataframes['customers'].head(5))

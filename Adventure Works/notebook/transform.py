@@ -27,3 +27,13 @@ def clean_table(df_raw, table_name):
     df_cleaned = df_raw.dropna()
     return df_cleaned
 
+# Since we have sales for 3 years: 2015, 2016 and 2017, we need to combine them
+def combine_sales(dataframes):
+    sales = pd.concat(
+        [
+            dataframes["sales_2015"],
+            dataframes["sales_2016"],
+            dataframes["sales_2017"]
+        ],ignore_index=True
+    )
+    return sales

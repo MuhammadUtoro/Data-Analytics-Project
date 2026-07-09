@@ -37,3 +37,26 @@ def combine_sales(dataframes):
         ],ignore_index=True
     )
     return sales
+
+# Column "Date" rename
+def rename_col(df, rename_map):
+    df.rename(
+        columns=rename_map,
+        inplace=True
+    )
+    return df
+
+# String to Numeric
+NUMERIC_COLUMNS = {
+    "customers": [
+        "AnnualIncome"
+    ]
+}
+def to_numeric(df,table_name):
+    if table_name in NUMERIC_COLUMNS:
+        for col in NUMERIC_COLUMNS[table_name]:
+            df[col] = (
+                df[col].str.replace("$", "", regex=False).str.replace(",", '', regex=False)
+            )
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+    return df

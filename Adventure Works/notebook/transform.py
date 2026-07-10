@@ -60,3 +60,13 @@ def to_numeric(df,table_name):
             )
             df[col] = pd.to_numeric(df[col], errors='coerce')
     return df
+
+import re
+
+def standardize_columns(df):
+    df.columns = (
+        df.columns
+        .str.replace(r'(?<!^)(?=[A-Z])', '_', regex=True)
+        .str.lower()
+    )
+    return df

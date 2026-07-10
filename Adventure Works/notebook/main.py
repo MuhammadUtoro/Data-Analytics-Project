@@ -1,5 +1,5 @@
 from extract import load_csv
-from transform import table_profile, clean_table, combine_sales, rename_col, to_numeric
+from transform import table_profile, clean_table, combine_sales, rename_col, to_numeric, standardize_columns
 from load import load_table, engine
 
 # Iterate through the files and rename the file for sql tables
@@ -27,11 +27,11 @@ tables = {
 
 LOAD_ORDER = [
     "calendar",
+    "territories",
+    "customers",
     "product_categories",
     "product_subcategories",
     "products",
-    "customers",
-    "territories",
     "sales",
     "returns"
 ]
@@ -40,9 +40,14 @@ dataframes = {}
 
 # Observe the data
 for filename, table_name in tables.items():
+    # Load CSV files
     df = load_csv(FILE_PATH, filename)
+    # Clean Raw data
     df = clean_table(df, table_name)
+    # Convert to numeric
     df = to_numeric(df, table_name)
+    # lower_case_snake 
+    df = standardize_columns(df)
     table_profile (df, table_name)
 
     dataframes[table_name] = df
@@ -53,12 +58,14 @@ dataframes['sales'] =  sales
 
 dataframes['calendar'] = rename_col(
     dataframes['calendar'],
-    {"Date": "CalendarDate"}
+    {"date": "calendar_date"}
 ) 
 
-for table_name in LOAD_ORDER:
-    load_table(
-        dataframes[table_name],
-        table_name,
-        engine
-    )
+print(dataframes["calendar"].columns)
+
+# for table_name in LOAD_ORDER:
+#     load_table(
+#         dataframes[table_name],
+#         table_name,
+#         engine
+#     )

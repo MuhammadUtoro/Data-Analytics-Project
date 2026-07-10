@@ -24,7 +24,7 @@ def clean_table(df_raw, table_name):
     for cols in df_raw.columns:
         if 'date' in cols.lower():
             df_raw[cols] = pd.to_datetime(df_raw[cols], errors='coerce')
-    df_cleaned = df_raw.dropna()
+    df_cleaned = df_raw.fillna("Unknown")
     return df_cleaned
 
 # Since we have sales for 3 years: 2015, 2016 and 2017, we need to combine them

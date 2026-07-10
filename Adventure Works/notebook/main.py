@@ -1,3 +1,4 @@
+import pandas as pd
 from extract import load_csv
 from transform import table_profile, clean_table, combine_sales, rename_col, to_numeric, standardize_columns
 from load import load_table, engine
@@ -61,11 +62,8 @@ dataframes['calendar'] = rename_col(
     {"date": "calendar_date"}
 ) 
 
-print(dataframes["calendar"].columns)
-
-# for table_name in LOAD_ORDER:
-#     load_table(
-#         dataframes[table_name],
-#         table_name,
-#         engine
-#     )
+for table_name in LOAD_ORDER: load_table(
+        dataframes[table_name],
+        table_name,
+        engine
+    )

@@ -1,0 +1,5 @@
+-- 1. Calculate the total quantity sold
+-- 2. How many unique customers are on the database?
+-- 3. How many products are on the catalog?
+-- 4. Calculate the average product price
+-- 5. Calculate the total returned quantity

@@ -1,0 +1,5 @@
+-- 1. Show all the products which are above average price
+-- 2. Show all the customers who spend above average
+-- 3. Show category with highest sales
+-- 4. Find customers that never purchased
+-- 5. Find products which never returned
